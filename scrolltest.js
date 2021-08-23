@@ -18,7 +18,9 @@ setInterval(function(){
   $(".pixels").text(numberWithCommas(pixelsPerSecond) + " pixels per second");
   console.log(makeGradient(pixelsPerSecond));
   $("body").css("background", "#" + rainbow.colourAt(pixelsPerSecond));
-  $(".pixels").css("font-size",fontSize(pixelsPerSecond) + "px");
+  if(pixelsPerSecond < 140001){
+    $(".pixels").css("font-size",fontSize(pixelsPerSecond) + "px");
+  }
   if(pixelsPerSecond > 0){
     $(".headline").css("display", "none");
     $(".container").css("display", "block");
